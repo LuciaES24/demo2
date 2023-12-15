@@ -11,7 +11,12 @@ data class Person(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
     val name: String,
-    val age: Int,
+    val age: Int
+){
     @OneToMany(mappedBy = "dueno", cascade = [CascadeType.ALL])
-    val mascotas : MutableList<Animal>
-)
+    val mascotas : MutableList<Animal> = mutableListOf()
+
+    fun anadirMascota(mascota:Animal){
+        mascotas.add(mascota)
+    }
+}

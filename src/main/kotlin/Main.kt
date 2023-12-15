@@ -11,11 +11,9 @@ fun main() {
 
     val entityManager: EntityManager = entityManagerFactory.createEntityManager()
 
-    val listaMascotas = mutableListOf<Animal>()
-
-    val person = Person(name =  "John Doe", age = 30, mascotas = listaMascotas)
+    val person = Person(name =  "John Doe", age = 30)
     val animal = Animal(nameAnimal = "Bady", dueno = person, tipo = "Perro")
-    listaMascotas.add(animal)
+    person.anadirMascota(animal)
     val direccion = Direccion(localidad = "Cádiz", pais = "España", direccion = "Av. de las Cortes")
     val empleado = Empleado(nombre = "Mario García", direccion = direccion)
 
